@@ -1,0 +1,78 @@
+<div class="d-flex justify-content-between">
+    <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      </mat-form-field>
+      <button routerLink="/playerdetails" mat-raised-button> Back to Details Page</button>
+</div>
+
+
+  
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+  
+      <!-- FirstName Column -->
+      <ng-container matColumnDef="FirstName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.FirstName}} </td>
+      </ng-container>
+  
+      <!-- LastName Column -->
+      <ng-container matColumnDef="LastName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Surname </th>
+        <td mat-cell *matCellDef="let row"> {{row.LastName}} </td>
+      </ng-container>
+  
+      <!-- Email Column -->
+      <ng-container matColumnDef="Email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+        <td mat-cell *matCellDef="let row"> {{row.Email}} </td>
+      </ng-container>
+
+      <!-- Alias Column -->
+      <ng-container matColumnDef="Alias">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Alias </th>
+        <td mat-cell *matCellDef="let row"> {{row.Alias}} </td>
+      </ng-container>
+
+      <!-- Rank Column -->
+      <ng-container matColumnDef="Rank">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Rank </th>
+        <td mat-cell *matCellDef="let row"> {{row.Rank}} </td>
+      </ng-container>
+
+      <!-- Agent Column -->
+      <ng-container matColumnDef="Agent">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Agent </th>
+        <td mat-cell *matCellDef="let row"> {{row.Agent}} </td>
+      </ng-container>
+
+      <!-- Action Column -->
+      <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+        <td mat-cell *matCellDef="let row">
+            <button style="margin: 5px;" [routerLink]="['/details', row.id]" mat-raised-button>View</button>
+            <button style="margin: 5px;" (click)="Edit(row.id)" mat-raised-button>Edit</button>
+            <button style="margin: 5px;" (click)="Delete(row.id)" mat-raised-button>Delete</button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef= "displayColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>
+  
+  

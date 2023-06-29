@@ -1,0 +1,57 @@
+<div class="top text-center">
+    <h1>Welcome, Enter Your Player Details</h1>
+</div>
+
+<div class="player-form m-3 p-4">
+    <form [formGroup]= "registerForm">
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input formControlName="FirstName" matInput placeholder="Firstname">
+            <mat-icon matSuffix>account_circle</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field appearance="fill">
+              <mat-label>Surname</mat-label>
+              <input formControlName="LastName" matInput placeholder="Surname">
+              <mat-icon matSuffix>account_circle</mat-icon>
+            </mat-form-field>
+          </div>
+        <div class="col-md-6">
+            <mat-form-field appearance="fill">
+              <mat-label>Email</mat-label>
+              <input formControlName="Email" matInput placeholder="Email">
+              <mat-icon matSuffix>mail</mat-icon>
+            </mat-form-field>
+          </div>
+        <div class="col-md-6">
+              <mat-form-field appearance="fill">
+                <mat-label>Alias</mat-label>
+                <input formControlName="Alias" matInput placeholder="Alias">
+                <mat-icon matSuffix>computer</mat-icon>
+              </mat-form-field>
+            </div>
+        <div class="col-md-6">
+                <mat-form-field appearance="fill">
+                  <mat-label>Rank</mat-label>
+                  <input type="number" formControlName="Rank" matInput placeholder="Rank">
+                  <mat-icon matSuffix>bar_chart</mat-icon>
+                </mat-form-field>
+                <div>Rank is: </div>
+            </div>
+        <div class="col-md-6">
+            <mat-form-field>
+                <mat-label>Select Agent</mat-label>
+                <mat-select formControlName="Agent">
+                  <mat-option *ngFor="let agent of AgentList" [value]="agent.name">{{agent.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+                  <div>Selected Agent is: </div>
+            </div>
+      </div>
+      <button *ngIf= "!isUpdate" (click)= "Submit()" class= "mt-4" mat-flat-button>Submit</button>
+      <button *ngIf= "isUpdate" (click)= "Update()" class= "mt-4" mat-flat-button>Update</button>
+    </form>
+  </div>
