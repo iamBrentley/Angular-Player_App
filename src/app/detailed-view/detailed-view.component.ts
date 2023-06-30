@@ -12,6 +12,7 @@ import { Agents } from '../models/agents.model';
 export class DetailedViewComponent implements OnInit{
   public playerId!: number;
   public agentId!: number;
+  public agentName!: string;
   playerDetail!: Player;
   agentDetail!: Agents;
 
@@ -22,6 +23,8 @@ export class DetailedViewComponent implements OnInit{
       this.playerId = val['id'];
       this.FetchPlayerDetails(this.playerId);
     })
+    
+    
   }
 
   FetchPlayerDetails(playerId:number){
@@ -32,7 +35,7 @@ export class DetailedViewComponent implements OnInit{
   }
 
   FetchAgentDetails(agentId:number){
-    this.Api.getRegisteredPlayerAgent(agentId).subscribe(res=>{
+    this.Api.getRegisteredPlayerAgent(this.agentName).subscribe(res=>{
       this.agentDetail = res;
       console.log(this.agentDetail);
     })

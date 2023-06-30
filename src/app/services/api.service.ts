@@ -36,7 +36,7 @@ export class ApiService {
     return this.http.get<Player>(`${this.PlayerUrl}/${id}`)
   }
 
-  getRegisteredPlayerAgent(id: number){
-    return this.http.get<Agents>(`${this.AgentsUrl}/${id}`)
+  getRegisteredPlayerAgent(name: string){
+    return this.http.get<Agents>(`${this.AgentsUrl}/${name}`)
   }
 }

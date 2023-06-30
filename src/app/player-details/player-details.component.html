@@ -39,7 +39,7 @@
                   <input type="number" formControlName="Rank" matInput placeholder="Rank">
                   <mat-icon matSuffix>bar_chart</mat-icon>
                 </mat-form-field>
-                <div>Rank is: </div>
+                <div></div>
             </div>
         <div class="col-md-6">
             <mat-form-field>
@@ -48,10 +48,22 @@
                   <mat-option *ngFor="let agent of AgentList" [value]="agent.name">{{agent.name}}</mat-option>
                 </mat-select>
               </mat-form-field>
-                  <div>Selected Agent is: </div>
+                  <div></div>
+                  
             </div>
       </div>
       <button *ngIf= "!isUpdate" (click)= "Submit()" class= "mt-4" mat-flat-button>Submit</button>
       <button *ngIf= "isUpdate" (click)= "Update()" class= "mt-4" mat-flat-button>Update</button>
     </form>
   </div>
+  <div class="details">
+    <h1>
+      This app's functionality relies on a json server
+    </h1>
+    <h3 style="text-align: center; width: 450px;">
+      This app gets spcific information from a json server, and posts information in turn to the same server.
+      The agent select option is fetching all those agent names from the server i created.
+      
+    </h3>
+  </div>
+ 

@@ -10,13 +10,13 @@
       "id": 1
     },
     {
-      "FirstName": "John",
-      "LastName": "Doe",
-      "Email": "JohnDo0e@email.com",
-      "Alias": "dd",
-      "Rank": 4,
-      "Agent": "Killjoy",
-      "id": 2
+      "FirstName": "Kitso",
+      "LastName": "Modisa",
+      "Email": "kitso@gmail.com",
+      "Alias": "Jeff",
+      "Rank": 17,
+      "Agent": "Sage",
+      "id": 3
     }
   ],
   "Agents": [
@@ -24,6 +24,7 @@
       "name": "Omen",
       "role": "Controller",
       "description": "A phantom of a memory, Omen hunts in the shadows. He renders enemies blind, teleports across the field, then lets paranoia take hold as his foe scrambles to learn where he might strike next.",
+      "image": "/AngularProject1/src/app/AgentImages/Omen.png",
       "id": 1
     },
     {

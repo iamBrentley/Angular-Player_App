@@ -16,7 +16,7 @@ export class PlayerDetailsComponent implements OnInit  {
   AgentList:any;
   public IdToUpdate!: number;
   public isUpdate: boolean = false;
-  //playerDetail!: Player;
+  playerDetail!: Player;
 
 
   constructor(private builder: FormBuilder,
@@ -50,6 +50,7 @@ export class PlayerDetailsComponent implements OnInit  {
     console.log(this.registerForm.value);
     this.Api.postPlayer(this.registerForm.value).subscribe(res=>{
       this.toast.success({detail:"Success", summary:"Player Details Added", duration:3000});
+      alert("Details Saved");
       this.registerForm.reset();
     })
   }
@@ -59,6 +60,7 @@ export class PlayerDetailsComponent implements OnInit  {
     this.Api.updatePlayer(this.registerForm.value, this.IdToUpdate).subscribe(res=>{
       this.toast.success({detail:"Success", summary:"Player Details Added", duration:3000});
       this.registerForm.reset();
+      alert("Details Updated")
       this.router.navigate(['viewdetails']);
     })
   }
