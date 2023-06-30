@@ -1,15 +1,6 @@
 {
   "PlayerDetails": [
     {
-      "FirstName": "Brentley",
-      "LastName": "Muranda",
-      "Email": "TestEmail@gmail.com",
-      "Alias": "Buzz",
-      "Rank": 0,
-      "Agent": "Omen",
-      "id": 1
-    },
-    {
       "FirstName": "Kitso",
       "LastName": "Modisa",
       "Email": "kitso@gmail.com",
@@ -17,6 +8,15 @@
       "Rank": 17,
       "Agent": "Sage",
       "id": 3
+    },
+    {
+      "FirstName": "John",
+      "LastName": "Joe",
+      "Email": "JohnDoe@gmail.com",
+      "Alias": "John",
+      "Rank": 25,
+      "Agent": "Viper",
+      "id": 4
     }
   ],
   "Agents": [
